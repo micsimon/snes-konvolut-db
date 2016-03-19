@@ -28,16 +28,23 @@ Ziel dieses Projekts ist es, eine Webanwendung zur Verwaltung von Super Nintendo
 
 ## Zu verwendene Technologien
 - Maven als Buildtool
+    - Start der Grunt bzw. Gulp Task auch durch Maven
 - Spring Boot fürs Backend
     - Tests
         - TestNG als Testframework
         - Mockito als MockFramework
+    -Log
+        - Log4j 2
 - Angularjs 2.x fürs Frontend
     - Test
         - Mocha als Testframework
         - Karma als Testrunner
         - chai als AssertionFramrwork
         - sinon als Mockframework
+    - Design
+        - Bootstrap, Bootstrap UI, Angular UI und Angular Material als UI - Frameworks
+    - Responsive
+        - Bootstrp Grid
 - Continuous Delivery mittels TeamCity bzw. Continuous Integration mittels TravisCI
 - Github Webhooks
     - muss noch genauer evaluiert werden

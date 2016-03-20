@@ -33,7 +33,19 @@
         <project.reporting.outputEncoding>${file.encoding}</project.reporting.outputEncoding>
         <maven.compiler.plugin.version>3.5.1</maven.compiler.plugin.version>
         <surefire.version>2.19.1</surefire.version>
+        <testng.version>6.9.10</testng.version>
     </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
 
     <build>
 

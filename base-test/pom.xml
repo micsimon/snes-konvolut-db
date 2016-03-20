@@ -14,17 +14,4 @@
         <version>1.0</version>
     </parent>
 
-    <properties>
-        <testng.version>6.9.10</testng.version>
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>${testng.version}</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
 </project>

@@ -74,6 +74,17 @@
                         </configuration>
                     </execution>
 
+                    <execution>
+                        <id>grunt build</id>
+                        <goals>
+                            <goal>grunt</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <arguments>build</arguments>
+                        </configuration>
+                    </execution>
+
                 </executions>
 
                 <configuration>

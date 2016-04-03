@@ -4,9 +4,9 @@
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>de.simon-front</groupId>
-    <artifactId>snes-konvolut-db</artifactId>
-    <version>1.0</version>
+    <groupId>de.simon-front.snes</groupId>
+    <artifactId>konvolut-db</artifactId>
+    <version>Dummyversion-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <scm>
@@ -16,15 +16,13 @@
     </scm>
 
     <prerequisites>
-        <maven>3.2.1</maven>
+        <maven>3.3.9</maven>
     </prerequisites>
 
     <modules>
         <module>frontend</module>
         <module>application</module>
         <module>backend</module>
-        <module>base</module>
-        <module>base-test</module>
     </modules>
 
     <properties>
@@ -36,16 +34,43 @@
         <testng.version>6.9.10</testng.version>
     </properties>
 
-    <dependencies>
+    <dependencyManagement>
 
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>${testng.version}</version>
-            <scope>test</scope>
-        </dependency>
+        <dependencies>
 
-    </dependencies>
+            <dependency>
+                <groupId>de.simon-front.snes</groupId>
+                <artifactId>application</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>de.simon-front.snes</groupId>
+                <artifactId>backend</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>de.simon-front.snes</groupId>
+                <artifactId>base</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>de.simon-front.snes</groupId>
+                <artifactId>frontend</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${testng.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
 
     <build>
 

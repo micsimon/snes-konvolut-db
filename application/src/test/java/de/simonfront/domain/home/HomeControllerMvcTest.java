@@ -14,7 +14,7 @@ public class HomeControllerMvcTest extends AbstractMvcTest {
 
     public void ok() {
         try {
-            MvcResult result = mockMvc.perform(get("/{name}", "Hans"))
+            MvcResult result = mockMvc.perform(get("/home/{name}", "Hans"))
                     .andExpect(status().isOk())
                     .andReturn();
             assertEquals(result.getResponse().getContentAsString(), "hallo Hans");

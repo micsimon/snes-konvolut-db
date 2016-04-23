@@ -20,6 +20,6 @@ public class HomeController {
     @ResponseBody
     public String sayHello(@PathVariable String name) {
         LOGGER.info("Logging for name: " + name);
-        return "hallo " + name;
+        return "hallo mein name ist --> " + name;
     }
 }

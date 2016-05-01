@@ -13,6 +13,9 @@ module.exports = function (grunt) {
                 }
             }
         },
+        config: {
+            targetWebapp: 'target/classes/static'
+        },
         clean: ['target'],
         copy: {
             main: {
@@ -36,9 +39,6 @@ module.exports = function (grunt) {
                     sourceMap: true
                 }
             }
-        },
-        config: {
-            targetWebapp: 'target/classes/static'
         },
         uglify: {
             target: {
@@ -72,7 +72,8 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('3. process sources', [
-        'uglify:target'
+        'uglify:target',
+        'copy:main'
     ]);
 
     //task for maven frontend plugin

@@ -31,7 +31,7 @@ module.exports = function (grunt) {
         },
         ts: {
             application: {
-                src: 'src/main/scripts/domain/**',
+                src: 'src/main/script/domain/**',
                 outDir: 'target/generated-artifacts/main/script',
                 options: {
                     fast: 'never',
@@ -43,10 +43,9 @@ module.exports = function (grunt) {
         uglify: {
             target: {
                 options: {
-                    "sourceMap": false,
-                    "mangle": false,
-                    "compress": false,
-                    "beautify": true
+                    sourceMap: false,
+                    compress: true,
+                    beautify: false
                 },
                 files: [
                     {

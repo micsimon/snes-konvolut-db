@@ -13,10 +13,10 @@ module.exports = function (grunt) {
                 }
             }
         },
+        clean: ['target'],
         config: {
             targetWebapp: 'target/classes/static'
         },
-        clean: ['target'],
         copy: {
             main: {
                 files: [
@@ -37,6 +37,15 @@ module.exports = function (grunt) {
                     fast: 'never',
                     module: 'commonjs',
                     sourceMap: true
+                }
+            }
+        },
+        tsd: {
+            refresh: {
+                options: {
+                    command: 'reinstall',
+                    latest: true,
+                    config: 'tsd.json'
                 }
             }
         },

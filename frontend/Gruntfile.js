@@ -59,6 +59,22 @@ module.exports = function (grunt) {
                     }
                 ]
             }
+        },
+        watch: {
+            script: {
+                files: ['src/main/script/**/*.ts'],
+                tasks: ['ts:application', 'uglify:target', 'copy:main']
+            },
+            html: {
+                files: ['src/main/resources/**/*.html'],
+                tasks: ['copy:main']
+            },
+            options: {
+                dateFormat: function (time) {
+                    grunt.log.writeln('The watch finished in ' + time + 'ms at' + (new Date()).toString());
+                    grunt.log.writeln('Waiting for more changes...');
+                },
+            },
         }
     });
 

@@ -53,7 +53,10 @@ module.exports = function (grunt) {
                         dest: 'target/classes/static/scripts/app.min.js'
                     },
                     {
-                        src: 'src/libs/extern/**/*.js',
+                        src: [
+                            'src/libs/extern/jquery/dist/jquery.min.js',
+                            'src/libs/extern/angular/angular.min.js'
+                        ],
                         dest: 'target/classes/static/scripts/extern-libs.min.js'
                     }
                 ]
@@ -72,8 +75,8 @@ module.exports = function (grunt) {
                 dateFormat: function (time) {
                     grunt.log.writeln('The watch finished in ' + time + 'ms at' + (new Date()).toString());
                     grunt.log.writeln('Waiting for more changes...');
-                },
-            },
+                }
+            }
         }
     });
 

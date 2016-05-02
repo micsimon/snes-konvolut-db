@@ -11,11 +11,14 @@
     </style>
 
 </head>
-<body ng-app ng-cloak>
+<body ng-cloak>
 <h1>Hallo</h1>
 
-<div>
+<div ng-controller="HomeController">
     <input ng-model="name"/>
+
+    <button ng-click="sayHello()">CLICK ME!!</button>
+
     {{name}}
 </div>
 

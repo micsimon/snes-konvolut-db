@@ -57,14 +57,16 @@ module.exports = function (grunt) {
             target: {
                 options: {
                     sourceMap: false,
-                    compress: false,
-                    beautify: false
+                    compress: {},
+                    beautify: false,
+                    mangle: false
                 },
                 files: [
                     {
                         src: [
-                            'target/generated-artifacts/main/script/app/bootstrap.js',
-                            'target/generated-artifacts/main/script/**/*.js'
+                            'target/generated-artifacts/main/script/app/ModuleSupport.js',
+                            'target/generated-artifacts/main/script/infrastructure/**/*.js',
+                            'target/generated-artifacts/main/script/**/*.js',
                         ],
                         dest: 'target/classes/static/scripts/app.min.js'
                     },
@@ -89,8 +91,7 @@ module.exports = function (grunt) {
             },
             options: {
                 dateFormat: function (time) {
-                    grunt.log.writeln('The watch finished in ' + time + 'ms at ' + (new Date()).toString());
-                    grunt.log.writeln('Waiting for more changes...');
+                    grunt.log.writeln('The watch finished in ' + time + 'ms');
                 }
             }
         }

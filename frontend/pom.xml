@@ -16,12 +16,12 @@
 
 
     <properties>
-        <frontend.maven.plugin.version>0.0.29</frontend.maven.plugin.version>
+        <frontend.maven.plugin.version>1.0</frontend.maven.plugin.version>
     </properties>
 
     <build>
-        <sourceDirectory>src/main/scripts</sourceDirectory>
-        <testSourceDirectory>src/test/scripts</testSourceDirectory>
+        <sourceDirectory>src/main/script</sourceDirectory>
+        <testSourceDirectory>src/test/script</testSourceDirectory>
 
         <plugins>
             <plugin>
@@ -33,7 +33,6 @@
 
                     <execution>
                         <id>install node and npm</id>
-                        <!--default is <phase>generate-resources</phase>-->
                         <goals>
                             <goal>install-node-and-npm</goal>
                         </goals>
@@ -41,7 +40,6 @@
 
                     <execution>
                         <id>npm install</id>
-                        <!--default is <phase>generate-resources</phase>-->
                         <goals>
                             <goal>npm</goal>
                         </goals>
@@ -52,7 +50,6 @@
 
                     <execution>
                         <id>bower install</id>
-                        <!--default is <phase>generate-resources</phase>-->
                         <goals>
                             <goal>bower</goal>
                         </goals>
@@ -66,7 +63,6 @@
                         <goals>
                             <goal>grunt</goal>
                         </goals>
-                        <phase>generate-resources</phase>
                         <configuration>
                             <arguments>build</arguments>
                         </configuration>
@@ -77,8 +73,6 @@
                 <configuration>
                     <nodeVersion>v4.4.1</nodeVersion>
                     <npmVersion>2.14.20</npmVersion>
-
-                    <installDirectory>target</installDirectory>
                 </configuration>
             </plugin>
         </plugins>

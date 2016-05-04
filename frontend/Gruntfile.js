@@ -14,10 +14,50 @@ module.exports = function (grunt) {
             }
         },
         clean: ['target'],
+        config: {
+            targetWebapp: 'target/classes/static'
+        },
+        copy: {
+            main: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'src/main/resources',
+                        src: ['**/*.*'],
+                        dest: 'target/classes/static'
+                    }
+                ]
+            }
+        },
+        karma: {
+            unit: {
+                configFile: 'karma.conf.js'
+            }
+        },
         ts: {
             application: {
-                src: 'src/main/scripts/domain/**',
+                src: [
+                    'typings/jquery/*.d.ts',
+                    'typings/angularjs/*.d.ts',
+                    'src/main/script/**/*.ts'
+                ],
                 outDir: 'target/generated-artifacts/main/script',
+                options: {
+                    fast: 'never',
+                    module: 'commonjs',
+                    sourceMap: true
+                }
+            },
+            unittests: {
+                src: [
+                    'typings/mocha/*.d.ts',
+                    'typings/angularjs/*.d.ts',
+                    'typings/chai/*.d.ts',
+                    'typings/sinon/*.d.ts',
+                    'typings/assertion-error/*.d.ts',  //ToDo brauch ich das wirklich?
+                    'src/test/script/**/*.ts'
+                ],
+                outDir: 'target/generated-artifacts/test/script',
                 options: {
                     fast: 'never',
                     module: 'commonjs',
@@ -25,24 +65,55 @@ module.exports = function (grunt) {
                 }
             }
         },
+        tsd: {
+            refresh: {
+                options: {
+                    command: 'reinstall',
+                    latest: true,
+                    config: 'tsd.json'
+                }
+            }
+        },
         uglify: {
             target: {
                 options: {
-                    "sourceMap": false,
-                    "mangle": false,
-                    "compress": false,
-                    "beautify": true
+                    sourceMap: false,
+                    compress: {},
+                    beautify: false,
+                    mangle: false
                 },
                 files: [
                     {
-                        src: 'target/generated-artifacts/main/script/**/*.js',
+                        src: [
+                            'target/generated-artifacts/main/script/app/ModuleSupport.js',
+                            'target/generated-artifacts/main/script/infrastructure/**/*.js',
+                            'target/generated-artifacts/main/script/**/*.js',
+                        ],
                         dest: 'target/classes/static/scripts/app.min.js'
                     },
                     {
-                        src: 'src/libs/extern/**/*.js',
+                        src: [
+                            'src/libs/extern/jquery/dist/jquery.min.js',
+                            'src/libs/extern/angular/angular.min.js'
+                        ],
                         dest: 'target/classes/static/scripts/extern-libs.min.js'
                     }
                 ]
+            }
+        },
+        watch: {
+            script: {
+                files: ['src/main/script/**/*.ts'],
+                tasks: ['ts:application', 'uglify:target', 'copy:main']
+            },
+            html: {
+                files: ['src/main/resources/**/*.html'],
+                tasks: ['copy:main']
+            },
+            options: {
+                dateFormat: function (time) {
+                    grunt.log.writeln('The watch finished in ' + time + 'ms');
+                }
             }
         }
     });
@@ -57,11 +128,21 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('3. process sources', [
-        'uglify:target'
+        'uglify:target',
+        'copy:main'
+    ]);
+
+    grunt.registerTask('4. compile test sources', [
+        'ts:unittests'
+    ]);
+
+    grunt.registerTask('5. process test sources', [
+        'karma'
     ]);
 
     //task for maven frontend plugin
     grunt.registerTask('build', [
+        '1. clean',
         '2. compile sources',
         '3. process sources'
     ]);

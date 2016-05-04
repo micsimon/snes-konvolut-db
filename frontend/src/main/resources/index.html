@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+
+</head>
+<body ng-cloak>
+<h1>Hallo</h1>
+
+<div id="homecontroller-container" ng-controller="HomeController">
+    <input ng-model="name"/>
+
+    <button ng-click="sayHello()">CLICK ME!!</button>
+
+    {{name}}
+</div>
+
+<script type="text/javascript" src="scripts/extern-libs.min.js"></script>
+<script type="text/javascript" src="scripts/app.min.js"></script>
+</body>
+</html>

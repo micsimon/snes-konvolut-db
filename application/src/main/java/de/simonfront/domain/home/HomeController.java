@@ -17,7 +17,7 @@ public class HomeController {
     private static Logger LOGGER = getLogger(HomeController.class);
 
     @RequestMapping(method = GET, path = "/{name}")
-    @ResponseBody
+    @ResponseBody  // JSON
     public String sayHello(@PathVariable String name) {
         LOGGER.info("Logging for name: " + name);
         return "hallo mein name ist --> " + name;

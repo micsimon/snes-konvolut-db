@@ -6,10 +6,25 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "jquery/jquery.d.ts": {
-      "commit": "029077eefb038480667b78c3a4785864052bf7df"
+      "commit": "73f7bb99692823f1811817f9753a02b57af5305e"
     },
     "angularjs/angular.d.ts": {
-      "commit": "029077eefb038480667b78c3a4785864052bf7df"
+      "commit": "73f7bb99692823f1811817f9753a02b57af5305e"
+    },
+    "mocha/mocha.d.ts": {
+      "commit": "73f7bb99692823f1811817f9753a02b57af5305e"
+    },
+    "angularjs/angular-mocks.d.ts": {
+      "commit": "73f7bb99692823f1811817f9753a02b57af5305e"
+    },
+    "assertion-error/assertion-error.d.ts": {
+      "commit": "73f7bb99692823f1811817f9753a02b57af5305e"
+    },
+    "chai/chai.d.ts": {
+      "commit": "73f7bb99692823f1811817f9753a02b57af5305e"
+    },
+    "sinon/sinon.d.ts": {
+      "commit": "73f7bb99692823f1811817f9753a02b57af5305e"
     }
   }
 }

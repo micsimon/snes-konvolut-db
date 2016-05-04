@@ -29,6 +29,11 @@ module.exports = function (grunt) {
                 ]
             }
         },
+        karma: {
+            unit: {
+                configFile: 'karma.conf.js'
+            }
+        },
         ts: {
             application: {
                 src: [
@@ -37,6 +42,22 @@ module.exports = function (grunt) {
                     'src/main/script/**/*.ts'
                 ],
                 outDir: 'target/generated-artifacts/main/script',
+                options: {
+                    fast: 'never',
+                    module: 'commonjs',
+                    sourceMap: true
+                }
+            },
+            unittests: {
+                src: [
+                    'typings/mocha/*.d.ts',
+                    'typings/angularjs/*.d.ts',
+                    'typings/chai/*.d.ts',
+                    'typings/sinon/*.d.ts',
+                    'typings/assertion-error/*.d.ts',  //ToDo brauch ich das wirklich?
+                    'src/test/script/**/*.ts'
+                ],
+                outDir: 'target/generated-artifacts/test/script',
                 options: {
                     fast: 'never',
                     module: 'commonjs',
@@ -109,6 +130,14 @@ module.exports = function (grunt) {
     grunt.registerTask('3. process sources', [
         'uglify:target',
         'copy:main'
+    ]);
+
+    grunt.registerTask('4. compile test sources', [
+        'ts:unittests'
+    ]);
+
+    grunt.registerTask('5. process test sources', [
+        'karma'
     ]);
 
     //task for maven frontend plugin

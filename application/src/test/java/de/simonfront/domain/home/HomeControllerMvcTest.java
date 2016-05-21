@@ -9,7 +9,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.testng.Assert.assertEquals;
 
-@Test
+@Test(enabled = false)
 public class HomeControllerMvcTest extends AbstractMvcTest {
 
     public void ok() {

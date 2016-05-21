@@ -18,6 +18,6 @@ public class SpielController {
     @RequestMapping(method = GET)
     @ResponseBody  // JSON
     public List<SpielModel> getSpiele(SpielRepository repository) {
-        return repository. null;
+        return null;
     }
 }

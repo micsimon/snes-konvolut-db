@@ -68,6 +68,17 @@
                         </configuration>
                     </execution>
 
+                    <execution>
+                        <id>grunt unittests</id>
+                        <goals>
+                            <goal>grunt</goal>
+                        </goals>
+                        <phase>test</phase>
+                        <configuration>
+                            <arguments>unittests</arguments>
+                        </configuration>
+                    </execution>
+
                 </executions>
 
                 <configuration>

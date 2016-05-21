@@ -147,4 +147,9 @@ module.exports = function (grunt) {
         '3. process sources'
     ]);
 
+    grunt.registerTask('unittests', [
+        '4. compile test sources',
+        '5. process test sources'
+    ]);
+
 };

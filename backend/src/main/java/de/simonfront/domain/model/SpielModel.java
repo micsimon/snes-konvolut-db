@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 public class SpielModel {
-    // TODO Rename ohne präfix
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int pkid;
@@ -27,7 +27,7 @@ public class SpielModel {
     @Override
     public String toString() {
         return String.format(
-                "SpielModel[pkid=%i,ean='%s', name='%s', description='%s']",
+                "SpielModel[pkid=%d, ean='%s' name='%s', description='%s']",
                 pkid, ean, name, description);
     }
 

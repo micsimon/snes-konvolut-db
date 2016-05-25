@@ -13,4 +13,6 @@ public interface SpielRepository extends CrudRepository<SpielModel, Integer> {
     List<SpielModel> findByName(String name);
 
     List<SpielModel> findByDescription(String description);
+
+    List<SpielModel> findAll();
 }

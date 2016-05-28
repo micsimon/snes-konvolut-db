@@ -120,6 +120,10 @@ module.exports = function (grunt) {
                 files: ['src/main/resources/**/*.html'],
                 tasks: ['copy:main']
             },
+            less: {
+                files: ['src/main/resources/**/*.less'],
+                tasks: ['less'],
+            },
             options: {
                 dateFormat: function (time) {
                     grunt.log.writeln('The watch finished in ' + time + 'ms');

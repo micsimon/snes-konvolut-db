@@ -1,7 +1,7 @@
 module skdb {
 
-    export module domain.spiel {
-        export class DataService {
+    export module domain.spiele {
+        export class SpieleDataService {
 
             private $http:ng.IHttpService;
 
@@ -9,16 +9,16 @@ module skdb {
 
             constructor($http:ng.IHttpService) {
                 this.$http = $http;
-                DataService.instance = this;
+                SpieleDataService.instance = this;
             }
 
             public getAlleSpiele() {
                 return this.$http.get('/spiele').then((response)=> {
-                    return response;
+                    return response.data;
                 });
             }
 
         }
     }
 }
-ModuleSupport.registerService(skdb.domain.spiel.DataService);
+ModuleSupport.registerService(skdb.domain.spiele.SpieleDataService);

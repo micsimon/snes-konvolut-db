@@ -122,7 +122,7 @@ module.exports = function (grunt) {
             },
             less: {
                 files: ['src/main/resources/**/*.less'],
-                tasks: ['less'],
+                tasks: ['less']
             },
             options: {
                 dateFormat: function (time) {

@@ -1,7 +1,7 @@
 module skdb {
 
-    export module domain.spiel {
-        class Spiel {
+    export module domain.spiele {
+        export class Spiel {
 
             private ean:number;
             private name:string;

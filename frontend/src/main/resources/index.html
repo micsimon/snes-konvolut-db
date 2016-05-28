@@ -14,13 +14,12 @@
 <body ng-cloak>
 <h1>Hallo</h1>
 
-<div id="homecontroller-container" ng-controller="HomeController">
-    <input ng-model="name"/>
+<input type="text" ng-model="name"/>
 
-    <button ng-click="sayHello()">CLICK ME!!</button>
+My name is: {{name}}
 
-    {{name}}
-</div>
+<spiele-uebersicht name="name"></spiele-uebersicht>
+
 
 <script type="text/javascript" src="scripts/extern-libs.min.js"></script>
 <script type="text/javascript" src="scripts/app.min.js"></script>

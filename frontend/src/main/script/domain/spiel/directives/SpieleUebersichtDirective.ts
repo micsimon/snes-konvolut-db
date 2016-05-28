@@ -4,7 +4,7 @@ window['skdb'].directive('spieleUebersicht', function () {
         scope: {
             name: '='
         },
-        template: `<h1>{{name}}</h1>`,
+        template: `<h1 class="textcolor">{{name}}</h1>`,
         link: function (scope:any, element:any, attrs:ng.IAttributes) {
             console.log('###', scope.name);
 

@@ -23,7 +23,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         cwd: 'src/main/resources',
-                        src: ['**/*.*'],
+                        src: ['**/*.*', '!**/*.less'],
                         dest: 'target/classes/static'
                     }
                 ]
@@ -101,6 +101,16 @@ module.exports = function (grunt) {
                 ]
             }
         },
+        less: {
+            development: {
+                options: {
+                    compress: true
+                },
+                files: {
+                    'target/classes/static/css/main.css': 'src/main/resources/main.less'
+                }
+            }
+        },
         watch: {
             script: {
                 files: ['src/main/script/**/*.ts'],
@@ -128,6 +138,7 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('3. process sources', [
+        'less',
         'uglify:target',
         'copy:main'
     ]);

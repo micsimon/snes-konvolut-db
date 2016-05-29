@@ -21,6 +21,8 @@ window['skdb'].directive('spieleUebersicht', function (spieleDataService:skdb.do
         link: function (scope:any, instanceElement:ng.IAugmentedJQuery, instanceAttributes:ng.IAttributes, controller:{}, transclude:ng.ITranscludeFunction) {
             scope.spiele = [];
 
+            console.log('asd', scope.spiele);
+
             scope.ladeAlleSpiele = function () {
                 spieleDataService.getAlleSpiele().then(function (spiele:skdb.domain.spiele.Spiel[]) {
                     scope.spiele = spiele;

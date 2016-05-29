@@ -38,7 +38,7 @@ module.exports = function (grunt) {
             application: {
                 src: [
                     'typings/jquery/*.d.ts',
-                    'typings/angularjs/*.d.ts',
+                    'typings/angularjs/angular.d.ts',
                     'src/main/script/**/*.ts'
                 ],
                 outDir: 'target/generated-artifacts/main/script',
@@ -50,11 +50,13 @@ module.exports = function (grunt) {
             },
             unittests: {
                 src: [
-                    'typings/mocha/*.d.ts',
+                    'typings/jquery/*.d.ts',
                     'typings/angularjs/*.d.ts',
                     'typings/chai/*.d.ts',
                     'typings/sinon/*.d.ts',
                     'typings/assertion-error/*.d.ts',  //ToDo brauch ich das wirklich?
+                    'typings/mocha/*.d.ts',
+                    'src/main/script/**/*.ts',
                     'src/test/script/**/*.ts'
                 ],
                 outDir: 'target/generated-artifacts/test/script',

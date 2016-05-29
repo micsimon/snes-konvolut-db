@@ -5,8 +5,12 @@ module.exports = function (config) {
     config.set({
 
         basePath: '',
-        frameworks: ['mocha'],
+        frameworks: ['mocha', 'chai', 'sinon'],
         files: [
+            'src/libs/extern/jquery/**/*.js',
+            'src/libs/extern/angular/*.js',
+            'src/libs/extern/angular-mocks/*.js',
+            'target/generated-artifacts/main/script/**/*.js',
             'target/generated-artifacts/test/script/**/*.js'
         ],
         exclude: [],
@@ -18,7 +22,9 @@ module.exports = function (config) {
         browsers: ['PhantomJS'],
         singleRun: true,
         plugins: [
+            'karma-sinon',
             'karma-mocha',
+            'karma-chai',
             'karma-mocha-reporter',
             'karma-phantomjs-launcher'
         ],

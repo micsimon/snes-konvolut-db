@@ -4,12 +4,14 @@
   "description": "snes-konvolut-db-frontend",
   "private": "true",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo Error && exit 1"
   },
   "author": "Michael Simon",
   "license": "MIT",
   "devDependencies": {
     "bower": "1.7.7",
+    "chai": "3.5.0",
+    "chai-as-promised": "5.3.0",
     "fs-extra": "0.26.7",
     "glob": "7.0.3",
     "grunt": "0.4.5",
@@ -26,10 +28,14 @@
     "grunt-tsd": "0.1.0",
     "grunt-tslint": "3.0.3",
     "karma": "0.13.22",
+    "karma-chai": "0.1.0",
     "karma-phantomjs-launcher": "1.0.0",
     "karma-mocha": "1.0.1",
     "karma-mocha-reporter": "2.0.2",
+    "karma-sinon": "1.0.5",
     "load-grunt-tasks": "3.4.1",
+    "mocha": "2.5.3",
+    "sinon": "1.17.4",
     "wrench": "1.5.8"
   }
 }

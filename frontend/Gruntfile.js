@@ -37,6 +37,7 @@ module.exports = function (grunt) {
         ts: {
             application: {
                 src: [
+                    'node_modules/@angular/**/*.d.ts',
                     'typings/jquery/*.d.ts',
                     'typings/angularjs/angular.d.ts',
                     'src/main/script/**/*.ts'

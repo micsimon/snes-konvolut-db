@@ -21,4 +21,4 @@ module skdb {
         }
     }
 }
-ModuleSupport.registerService(skdb.domain.spiele.SpieleDataService);
+skdb.bootstrap.ModuleSupport.registerService(skdb.domain.spiele.SpieleDataService);

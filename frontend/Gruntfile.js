@@ -37,6 +37,7 @@ module.exports = function (grunt) {
         ts: {
             application: {
                 src: [
+                    'typings/index.d.ts',
                     'node_modules/@angular/**/*.d.ts',
                     'typings/jquery/*.d.ts',
                     'typings/angularjs/angular.d.ts',
@@ -81,15 +82,16 @@ module.exports = function (grunt) {
             target: {
                 options: {
                     sourceMap: false,
-                    compress: {},
+                    compress: true,
                     beautify: false,
-                    mangle: false
+                    mangle: true
                 },
                 files: [
                     {
                         src: [
-                            'target/generated-artifacts/main/script/app/ModuleSupport.js',
-                            'target/generated-artifacts/main/script/infrastructure/**/*.js',
+                            'target/generated-artifacts/main/script/app/Bootstrap.js',
+                            //'target/generated-artifacts/main/script/infrastructure/**/*.js',
+                            //'target/generated-artifacts/main/script/app/ModuleSupport.js',
                             'target/generated-artifacts/main/script/**/*.js',
                         ],
                         dest: 'target/classes/static/scripts/app.min.js'

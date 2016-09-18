@@ -4,8 +4,11 @@ import { UpgradeAdapter } from '@angular/upgrade';
 
 window['skdb'] = angular.module('app', []);
 
-let upgradeAdapter = new UpgradeAdapter();
+const upgradeAdapter = new UpgradeAdapter(null);
 
 angular.element(document).on('ready', function () {
-    upgradeAdapter.bootstrap(document, ['app']);
+    //upgradeAdapter.bootstrap(document, ['app']);
+    //upgradeAdapter.bootstrap(document.body, ['app'], {strictDi: true});
+    upgradeAdapter.bootstrap(document.body, ['app'])
 });
+

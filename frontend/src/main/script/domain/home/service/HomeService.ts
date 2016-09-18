@@ -15,4 +15,4 @@ module skdb {
         }
     }
 }
-ModuleSupport.registerService(skdb.domain.HomeService);
+skdb.bootstrap.ModuleSupport.registerService(skdb.domain.HomeService);

@@ -44,7 +44,7 @@
                             <goal>npm</goal>
                         </goals>
                         <configuration>
-                            <arguments>install</arguments>
+                            <arguments>install --without-snapshot</arguments>
                         </configuration>
                     </execution>
 

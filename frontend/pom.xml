@@ -82,8 +82,8 @@
                 </executions>
 
                 <configuration>
-                    <nodeVersion>v6.3.0</nodeVersion>
-                    <npmVersion>3.10.3</npmVersion>
+                    <nodeVersion>v4.4.1</nodeVersion>
+                    <npmVersion>2.14.20</npmVersion>
                 </configuration>
             </plugin>
         </plugins>

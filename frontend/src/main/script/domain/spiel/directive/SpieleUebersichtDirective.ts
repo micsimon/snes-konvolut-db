@@ -1,18 +1,7 @@
-angular.module('app').directive('spieleUebersicht', function (spieleDataService:skdb.domain.spiele.SpieleDataService) {
+window['skdb'].directive('spieleUebersicht', function (spieleDataService:skdb.domain.spiele.SpieleDataService) {
     return {
         restrict: 'E',
         scope: {},
-        link: function (scope:any, instanceElement:ng.IAugmentedJQuery, instanceAttributes:ng.IAttributes, controller:{}, transclude:ng.ITranscludeFunction) {
-            scope.spiele = [];
-
-            console.log('asd', scope.spiele);
-
-            scope.ladeAlleSpiele = function () {
-                spieleDataService.getAlleSpiele().then(function (spiele:skdb.domain.spiele.Spiel[]) {
-                    scope.spiele = spiele;
-                });
-            };
-        },
         template: `<div>
                         <h1>Spieleübersicht</h1>
                         <button ng-click="ladeAlleSpiele()">Lade alle Spiele</button>
@@ -28,6 +17,17 @@ angular.module('app').directive('spieleUebersicht', function (spieleDataService:
                                 <td>{{spiel.ean}}</td>
                             </tr>
                         </table>
-                    </div>`
+                    </div>`,
+        link: function (scope:any, instanceElement:ng.IAugmentedJQuery, instanceAttributes:ng.IAttributes, controller:{}, transclude:ng.ITranscludeFunction) {
+            scope.spiele = [];
+
+            console.log('asd', scope.spiele);
+
+            scope.ladeAlleSpiele = function () {
+                spieleDataService.getAlleSpiele().then(function (spiele:skdb.domain.spiele.Spiel[]) {
+                    scope.spiele = spiele;
+                });
+            };
+        }
     }
 });

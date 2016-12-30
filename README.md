@@ -35,7 +35,7 @@ Ziel dieses Projekts ist es, eine Webanwendung zur Verwaltung von Super Nintendo
         - Mockito als MockFramework
     -Log
         - Log4j 2
-- Angularjs 2.x fürs Frontend
+- Angularjs 2.x.x fürs Frontend
     - Test
         - Mocha als Testframework
         - Karma als Testrunner
